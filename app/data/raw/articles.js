@@ -1,6 +1,6 @@
 const articles = [{
   id: 1,
-  photo: require('../img/photo1.png'),
+  photo: require('../img/photo4.png'),
   type: 'article',
   time: -300,
   header: 'Plants Of Our Nature',
@@ -40,7 +40,7 @@ const articles = [{
   }],
 }, {
   id: 2,
-  photo: require('../img/photo2.png'),
+  photo: require('../img/photo3.png'),
   type: 'article',
   time: -1373,
   header: 'Balloon Trip',
@@ -84,7 +84,7 @@ const articles = [{
   comments: [],
 }, {
   id: 6,
-  photo: require('../img/photo6.png'),
+  photo: require('../img/photo3.png'),
   type: 'article',
   time: -5665,
   header: 'Mountains',
@@ -95,7 +95,7 @@ const articles = [{
   comments: [],
 }, {
   id: 7,
-  photo: require('../img/photo45.png'),
+  photo: require('../img/photo48.png'),
   type: 'fact',
   time: -5665,
   header: 'Smile and Frown',
@@ -103,7 +103,7 @@ const articles = [{
   comments: [],
 }, {
   id: 8,
-  photo: require('../img/photo46.png'),
+  photo: require('../img/photo49.png'),
   type: 'fact',
   time: -8373,
   header: 'Interesting Fact',
@@ -111,7 +111,7 @@ const articles = [{
   comments: [],
 }, {
   id: 9,
-  photo: require('../img/photo47.png'),
+  photo: require('../img/photo49.png'),
   type: 'fact',
   time: -565,
   header: 'Elephant',

@@ -1,16 +1,9 @@
 const images = [
-  require('../img/Image10.png'),
-  require('../img/Image11.png'),
-  require('../img/Image2.png'),
-  require('../img/Image3.png'),
-  require('../img/Image4.png'),
-  require('../img/Image1.png'),
-  require('../img/Image12.png'),
-  require('../img/Image8.png'),
-  require('../img/Image6.png'),
-  require('../img/Image9.png'),
-  require('../img/Image5.png'),
-  require('../img/Image7.png'),
+  require('../img/image2.png'),
+  require('../img/image3.png'),
+  require('../img/photo32.jpg'),
+  require('../img/photo33.png'),
+  require('../img/photo49.png'),
 ];
 
 const users = [{
@@ -23,7 +16,7 @@ const users = [{
   password: '123456',
   newPassword: '12345678',
   confirmPassword: '12345678',
-  photo: require('../img/avatars/Image9.png'),
+  photo: require('../img/avatars/Image1.png'),
   postCount: 86,
   followersCount: 22102,
   followingCount: 536,
@@ -43,7 +36,7 @@ const users = [{
   followingCount: 975,
   followersCount: 1703,
   images,
-  photo: require('../img/avatars/Image1.png'),
+  photo: require('../img/avatars/Image2.png'),
 },
 {
   id: 3,
@@ -91,7 +84,7 @@ const users = [{
   followingCount: 745,
   followersCount: 2703,
   images,
-  photo: require('../img/avatars/Image5.png'),
+  photo: require('../img/avatars/Image1.png'),
 },
 {
   id: 6,
@@ -107,7 +100,7 @@ const users = [{
   followingCount: 444,
   followersCount: 8432,
   images,
-  photo: require('../img/avatars/Image6.png'),
+  photo: require('../img/avatars/Image2.png'),
 },
 {
   id: 7,
@@ -123,7 +116,7 @@ const users = [{
   followingCount: 731,
   followersCount: 18230,
   images,
-  photo: require('../img/avatars/Image7.png'),
+  photo: require('../img/avatars/Image3.png'),
 },
 {
   id: 8,
@@ -139,7 +132,7 @@ const users = [{
   followingCount: 667,
   followersCount: 4234,
   images,
-  photo: require('../img/avatars/Image8.png'),
+  photo: require('../img/avatars/Image4.png'),
 },
 {
   id: 9,
@@ -155,7 +148,7 @@ const users = [{
   followingCount: 750,
   followersCount: 1032,
   images,
-  photo: require('../img/avatars/Image10.png'),
+  photo: require('../img/avatars/Image1.png'),
 },
 {
   id: 10,
@@ -171,7 +164,7 @@ const users = [{
   followingCount: 343,
   followersCount: 3721,
   images,
-  photo: require('../img/avatars/Image11.png'),
+  photo: require('../img/avatars/Image2.png'),
 },
 {
   id: 11,
@@ -187,7 +180,7 @@ const users = [{
   followingCount: 165,
   followersCount: 5433,
   images,
-  photo: require('../img/avatars/Image12.png'),
+  photo: require('../img/avatars/Image3.png'),
 }];
 
 export default users;
