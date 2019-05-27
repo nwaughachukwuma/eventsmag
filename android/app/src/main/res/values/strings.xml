@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">EventsMag</string>
+    <string name="google_play_services_version">16.0.1</string>
+    <string name="default_notification_channel_id">99</string>
+</resources>

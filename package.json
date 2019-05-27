@@ -1,0 +1,70 @@
+{
+  "name": "eventsmag",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
+    "@merryjs/photo-viewer": "^3.0.0",
+    "lodash": "4.17.4",
+    "moment": "2.20.1",
+    "prop-types": "15.6.0",
+    "react": "16.8.6",
+    "react-native": "0.59.8",
+    "react-native-easy-grid": "^0.2.1",
+    "react-native-firebase": "^5.3.1",
+    "react-native-image-crop-picker": "0.24.1",
+    "react-native-keyboard-spacer": "0.4.1",
+    "react-native-linear-gradient": "2.4.0",
+    "react-native-navigation": "^2.19.0",
+    "react-native-paper": "^2.15.2",
+    "react-native-progress-bar": "0.1.2",
+    "react-native-svg": "^6.5.2",
+    "react-native-switch-pro": "0.4.6",
+    "react-native-vector-icons": "^6.3.0",
+    "react-native-ui-kitten": "^3.1.2",
+    "react-native-video": "4.4.1",
+    "react-redux": "^7.0.3",
+    "react-redux-firebase": "^2.2.6",
+    "redux": "^4.0.1",
+    "redux-firestore": "^0.8.0",
+    "redux-persist": "^5.10.0",
+    "reduxsauce": "^1.1.0",
+    "victory-native": "0.15.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/runtime": "^7.3.1",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "^24.1.0",
+    "babel-preset-react-native": "^1.9.1",
+    "eslint": "^4.19.1",
+    "eslint-config-akveo-react": "^1.0.0",
+    "eslint-plugin-import": "2.11.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "husky": "^0.14.3",
+    "jest": "^24.1.0",
+    "jest-expo": "^28.0.0",
+    "metro-react-native-babel-preset": "^0.51.1",
+    "react-native-scripts": "^1.14.0",
+    "react-test-renderer": "16.8.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run prepush"
+    }
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "rnpm": {
+    "assets": [
+      "./app/assets/fonts/"
+    ]
+  }
+}

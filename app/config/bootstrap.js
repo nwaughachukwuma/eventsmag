@@ -1,0 +1,168 @@
+import {
+  StyleSheet,
+} from 'react-native';
+import { RkTheme } from 'react-native-ui-kitten';
+import { KittenTheme } from './theme';
+import { SocialBarTypes } from 'components/socialBar/types';
+import { scale } from 'utils/scale';
+
+export const bootstrap = () => {
+  
+  /*
+   RkText types
+   */
+
+  RkTheme.setType('RkText', 'moon', {
+    fontFamily: 'icomoon',
+  });
+
+  RkTheme.setType('RkText', 'awesome', {
+    fontFamily: 'FontAwesome',
+  });
+
+  RkTheme.setType('RkText', 'hero', {
+    fontSize: scale(33),
+  });
+
+  RkTheme.setType('RkText', 'menuIcon', {
+    fontSize: 44,
+  });
+
+  RkTheme.setType('RkText', 'center', {
+    text: {
+      textAlign: 'center',
+    },
+  });
+
+  /*
+   RkCard types
+   */
+
+  RkTheme.setType('RkCard', 'basic', {
+    container: {
+      borderRadius: 3,
+      backgroundColor: '#ffffff',
+    },
+    header: {
+      justifyContent: 'flex-start',
+      paddingVertical: 14,
+    },
+    content: {
+      padding: 16,
+    },
+    footer: {
+      paddingBottom: 20,
+      paddingTop: 7.5,
+      paddingHorizontal: 0,
+    },
+  });
+
+  RkTheme.setType('RkCard', 'backImg', {
+    container: {
+      borderWidth: 0,
+      borderRadius: 0,
+    },
+    img: {
+      height: 225,
+    },
+    imgOverlay: {
+      height: 225,
+      backgroundColor: 'transparent',
+    },
+    content: {
+      paddingHorizontal: 14,
+    },
+    footer: {
+      paddingTop: 15,
+      paddingBottom: 0,
+      paddingVertical: 7.5,
+      paddingHorizontal: 0,
+    },
+  });
+
+
+  RkTheme.setType('RkCard', 'imgBlock', {
+    img: {
+      height: 235,
+    },
+    header: {
+      padding: 0,
+      paddingVertical: 13,
+      paddingHorizontal: 16,
+    },
+    imgOverlay: {
+      height: -1,
+    },
+    footer: {
+      paddingTop: 18,
+      paddingBottom: 15,
+      paddingVertical: 0,
+      paddingHorizontal: 0,
+    },
+  });
+
+  RkTheme.setType('RkCard', 'horizontal', {
+    container: {
+      flexDirection: 'row',
+      height: 110,
+    },
+    content: {
+      flex: 1,
+    },
+    img: {
+      height: null,
+      flex: -1,
+      width: 120,
+    },
+  });
+
+  RkTheme.setType('RkCard', 'blog', {
+    header: {
+      paddingHorizontal: 16,
+      paddingVertical: 0,
+      paddingTop: 16,
+    },
+    content: {
+      padding: 0,
+      paddingVertical: 0,
+      paddingTop: 12,
+    },
+    footer: {
+      paddingHorizontal: 16,
+      paddingTop: 15,
+      paddingBottom: 16,
+      alignItems: 'center',
+    },
+  });
+
+  RkTheme.setType('RkCard', 'article', {
+    container: {
+      borderWidth: 0,
+      backgroundColor: 'transparent',
+    },
+    header: {
+      paddingVertical: 0,
+      paddingTop: 20,
+      paddingBottom: 16,
+      justifyContent: 'space-between',
+      borderBottomWidth: StyleSheet.hairlineWidth,
+      borderColor: '#f2f2f2',
+    },
+    content: {
+      padding: 16,
+      borderBottomWidth: 1,
+      borderColor: '#f2f2f2',
+    },
+    footer: {
+      paddingHorizontal: 14,
+      paddingTop: 15,
+      paddingBottom: 16,
+      alignItems: 'center',
+    },
+  });
+
+  /*
+   Register components
+   */
+  RkTheme.registerComponent('SocialBar', SocialBarTypes);
+};
