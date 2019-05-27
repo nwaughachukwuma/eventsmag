@@ -1,9 +1,6 @@
 # EventsMag
 #### Create and share beautiful moments
-
-<img src="https://dl.dropbox.com/s/4ovnfdj8r7j86cm/Image%201.png?dl=0" >
-
-<img src="https://github.githubassets.com/images/icons/emoji/unicode/1f44f.png?v8" width="70px" />
+<img src="https://dl.dropbox.com/s/4ovnfdj8r7j86cm/Image%201.png?dl=0" />
 
 `This codebase is aimed as a starter for any React Native Project with needs for navigation, auth & state management, database & storage, ready built components and themes`
 
@@ -34,4 +31,5 @@ I will love to hear about your challenges using this project, or your suggestion
 **Author**
 - [Chukwuma Nwaugha](https://github.com/nwaughachukwuma)
 
-
+<img src="https://github.githubassets.com/images/icons/emoji/unicode/1f44f.png?v8" width="40px" />
+<img src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8" width="40px" />
