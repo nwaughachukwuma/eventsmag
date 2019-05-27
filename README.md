@@ -4,6 +4,13 @@
 
 `This codebase is aimed as a starter for any React Native Project with needs for navigation, auth & state management, database & storage, ready built components and themes`
 
+### Note: 
+1. This project is optimized for Android, IOS and Windows optimized versions are in the works 
+2. Master branch contains extraneous files and artefacts you do not need, so please use the public-access branch found here: https://github.com/nwaughachukwuma/eventsmag/tree/public-access
+
+### Installation:
+> git clone https://github.com/nwaughachukwuma/eventsmag.git <directory-name> -b public-access
+
 The project is highly opinionated based on my approach to building React Native apps and based on the integrations and tools I consider to be important to my work. I have made decisions for certain key libraries over others because of the ease and performance they bring to an App. Find below a list of the key integrations in this project. Feel free to fork this project and use as you desire.
 
 - React Native Navigation: this is used as the navigation library because it provides easy and customizable options for navigation. It also makes nav appear seemless as it integrates well with the native code. Read more here: [RN-Navigation](https://wix.github.io/react-native-navigation/)
@@ -28,10 +35,14 @@ This is a pet project, so feel free to join me in building it by asking for the 
 
 I will love to hear about your challenges using this project, or your suggestions on a better way to go about the integrations.
 
+## Todo
+[ ] Testing with Jest and Enzyme
+[ ] Build project for IOS and Windows
+
+
 **Author**
 - [Chukwuma Nwaugha](https://github.com/nwaughachukwuma)
 
-<img src="https://github.githubassets.com/images/icons/emoji/unicode/1f44f.png?v8" width="40px" />
-<img src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8" width="40px" />
+<img src="https://github.githubassets.com/images/icons/emoji/unicode/1f44f.png?v8" width="30px" /> <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8" width="30px" />
 
 
