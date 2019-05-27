@@ -1,8 +1,8 @@
 # EventsMag
 #### Create and share beautiful moments
-<img src="https://dl.dropbox.com/s/4ovnfdj8r7j86cm/Image%201.png?dl=0" />
-
 `This codebase is aimed as a starter for any React Native Project with needs for navigation, auth & state management, database & storage, ready built components and themes`
+
+<img src="https://dl.dropbox.com/s/4ovnfdj8r7j86cm/Image%201.png?dl=0" width="300px" /> <img src="https://dl.dropbox.com/s/0cduinlggz0j986/Image%202.png?dl=0" width="300px" />
 
 ### Note: 
 1. This project is optimized for Android, IOS and Windows optimized versions are in the works 
