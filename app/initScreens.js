@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigation } from 'react-native-navigation';
 import TextScreen from 'screens/textScreen';
-import { SignUp, PasswordRecovery, Login } from 'screens/login';
+import { SignUp, PasswordRecovery, Login } from 'screens/auth';
 import Home from 'screens/home'
 import Trending from 'screens/trending'
 import Mailbox from 'screens/mailbox'
