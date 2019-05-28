@@ -13,7 +13,7 @@ import firebase from 'react-native-firebase';
 import { goToAuth } from './navigator'
 import { USER_KEY } from './config'
 import {icons} from 'utils'
-import {homeBarBtnActions, rightButtons} from './layouts'
+import {homeBarBtnActions, rightButtons, leftButtons} from './layouts'
 
 export default class MyEvents extends Component {
   static get options() {
@@ -25,13 +25,7 @@ export default class MyEvents extends Component {
         drawBehind: false,
         visible: true,
         animate: false,
-        leftButtons: [
-          {
-            id: 'menuBtn',
-            icon: icons.menu,
-            color: 'white',
-          }
-        ],
+        leftButtons,
         rightButtons
       }
     };

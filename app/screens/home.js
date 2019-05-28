@@ -21,7 +21,7 @@ import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { Avatar } from 'react-native-paper';
 import {icons, images} from 'utils'
-import {homeBarBtnActions, rightButtons} from './layouts'
+import {homeBarBtnActions, rightButtons, leftButtons} from './layouts'
 import { SocialBar } from 'components/socialBar';
 import { data } from '../data';
 const moment = require('moment');
@@ -66,16 +66,7 @@ export class Home extends Component {
         visible: true,
         animate: false,
         hideOnScroll: true,
-        leftButtons: [
-          {
-            id: 'menuBtn',
-            icon: icons.menu,
-            color: 'white',
-            // buttonSize: 15,
-            buttonFontSize: 15,
-            buttonFontWeight: '600',
-          }
-        ],
+        leftButtons,
         rightButtons
       }
     };
@@ -101,6 +92,15 @@ export class Home extends Component {
     });
     this.requestMessagingPermission();
     this.storePushToken();
+
+    firebase.database().ref('.info/connected').on('value', snapshot => {
+      console.log('presence test ==>', snapshot.toJSON() )
+      if (snapshot.val() === true) {
+        console.log("presence test ==> connected");
+      } else {
+        console.log("presence test ==> not connected");
+      }
+    })
   }
 
   componentDidUpdate(prevProps, _) {

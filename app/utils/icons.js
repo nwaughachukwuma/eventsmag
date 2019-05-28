@@ -1,3 +1,4 @@
+import { Platform } from 'react-native'
 export const icons = {
     home: require('../assets/icons/home.png'),
     login: require('../assets/icons/log-in.png'),
@@ -19,6 +20,34 @@ export const icons = {
     fire: require('../assets/icons/fire.png'),
     event: require('../assets/icons/calendar-outline.png'),
     account_switch: require('../assets/icons/account-switch.png'),
+    platformIcons: {
+        ...Platform.select({
+            // these icons are from android/app/.../res folder
+            // they are used cause they load fast and resize for 
+            // different device pixel densities
+            android: {
+                menu: {uri: 'ic_action_menu'},
+                menu_light: {uri: 'ic_action_menu_light'},
+                person: {uri: 'ic_action_person_outline'},
+                person_light: {uri: 'ic_action_person_outline_light'},
+                user: {uri: 'ic_action_user'},
+                user_plus: {uri: 'ic_action_user_plus'},
+                users: {uri: 'ic_action_users'},
+                search: {uri: 'ic_action_search'},
+                search_light: {uri: 'ic_action_search_light'},
+                video: {uri: 'ic_action_videocam'},
+                video_light: {uri: 'ic_action_videocam_light'},
+            },
+            // you should add same icons to Xcode asset catalogs to get same result
+            // for now, am going to return the icons in ~projectRoot~/app/assets (JS side) folder 
+            ios: {
+                video_light: require('../assets/icons/video-outline.png'),
+                search_light: require('../assets/icons/search.png'),
+                person_light: require('../assets/icons/user.png'),
+                menu_light: require('../assets/icons/menu.png'),
+            }
+        })
+    }
 }
 
 export default icons
