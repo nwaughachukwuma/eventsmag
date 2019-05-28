@@ -4,8 +4,6 @@
 
 <img src="https://dl.dropbox.com/s/4ovnfdj8r7j86cm/Image%201.png?dl=0" width="300px" /> <img src="https://dl.dropbox.com/s/0cduinlggz0j986/Image%202.png?dl=0" width="300px" />
 
-<img src="https://dl.dropbox.com/s/4ovnfdj8r7j86cm/Image%201.png?dl=0" width="300px" /> <img src="https://dl.dropbox.com/s/0cduinlggz0j986/Image%202.png?dl=0" width="300px" />
-
 ### Note: 
 1. This project is optimized for Android, IOS and Windows optimized versions are in the works 
 2. Master branch contains extraneous files and artefacts you do not need, so please use the public-access branch found here: https://github.com/nwaughachukwuma/eventsmag/tree/public-access
