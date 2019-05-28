@@ -16,7 +16,7 @@ import {
 } from 'react-native-ui-kitten';
 import {Navigation} from 'react-native-navigation';
 import firebase from 'react-native-firebase';
-import { withFirebase } from 'react-redux-firebase'
+import { withFirebase, firebaseConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { Avatar } from 'react-native-paper';
@@ -93,19 +93,22 @@ export class Home extends Component {
     this.requestMessagingPermission();
     this.storePushToken();
 
-    firebase.database().ref('.info/connected').on('value', snapshot => {
-      console.log('presence test ==>', snapshot.toJSON() )
-      if (snapshot.val() === true) {
-        console.log("presence test ==> connected");
-      } else {
-        console.log("presence test ==> not connected");
+    const presenceRef = firebase.database().ref(`presence/${this.props.userAuth.uid}`)
+    firebase.database().ref('.info/connected').on('value', async snapshot => {
+      if (!presenceRef ) {
+        await presenceRef.set('offline');
+      }
+      if (snapshot.val()) {
+        presenceRef.onDisconnect().set('offline'); // .remove();
+        presenceRef.set('online');
       }
     })
   }
 
   componentDidUpdate(prevProps, _) {
     if (this.props !== prevProps) {
-    
+      const { presence, sessions} = this.props
+      console.log('firebase online state ==>>', presence, sessions);
     }
   }
 
@@ -209,14 +212,20 @@ export class Home extends Component {
 }
 
 const mapStateToProps = state => {
-  const {firebase} = state;
+  const {firebase, firestore} = state;
   return {
     userProfile: firebase.profile,
-    userAuth: firebase.auth
+    userAuth: firebase.auth,
+    presence: firebase.data.presence,
+    sessions: firebase.data.sessions
   }
 }
 
 export default compose(
-  withFirebase,
+  // withFirebase,
+  firebaseConnect((props) => [
+    { path: 'presence' },
+    { path: 'sessions' }
+  ]),
   connect(mapStateToProps, null)
 )(Home)
