@@ -1,6 +1,6 @@
 const images = [
-  require('../img/image2.png'),
-  require('../img/image3.png'),
+  require('../img/Image2.png'),
+  require('../img/Image3.png'),
   require('../img/photo32.jpg'),
   require('../img/photo33.png'),
   require('../img/photo49.png'),
