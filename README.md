@@ -10,6 +10,16 @@
 
 ### Installation:
 > git clone https://github.com/nwaughachukwuma/eventsmag.git <directory-name> -b public-access
+> cd directory-name
+> npm/yarn install
+`Next steps are important if you want to use cloud functions`
+> ensure you have firebase installed globally
+  - npm install -g firebase-tools
+> firebase init
+  - choose your project id as specified in your firebase console
+  - Follow the cli wizard to complete installation
+> Use the functions folder generated to write you cloud functions
+  - I have written a simple function onCreate user which sends a FCM to the user after registration
 
 The project is highly opinionated based on my approach to building React Native apps and based on the integrations and tools I consider to be important to my work. I have made decisions for certain key libraries over others because of the ease and performance they bring to an App. Find below a list of the key integrations in this project. Feel free to fork this project and use as you desire.
 
