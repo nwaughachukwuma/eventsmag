@@ -152,6 +152,7 @@ configurations.all {
 
 
 dependencies {
+    implementation project(':@react-native-community_netinfo')
     implementation project(':react-native-firebase')
     implementation project(':react-native-image-crop-picker')
     implementation project(':react-native-svg')

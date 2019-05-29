@@ -9,6 +9,7 @@ import {
   RkText,
   RkButton,
   RkModalImg,
+  RkGalleryImage
 } from 'react-native-ui-kitten';
 import PropTypes from 'prop-types';
 import { Ellipsis } from './ellipsis';
@@ -40,13 +41,18 @@ export class Gallery extends React.Component {
     </View>
   );
 
-  renderFooter = () => (
+  renderFooter = (options) => (
     <SocialBar />
   );
 
   renderItem = ({ index }) => (
     <RkModalImg
       style={{ width: this.state.itemSize, height: this.state.itemSize }}
+      headerStyle={{ backgroundColor: 'white'}}
+      footerStyle={{ backgroundColor: 'white', height: '10%'}}
+      imgContainerStyle={{ backgroundColor: 'white', paddingBottom: 20, marginBottom: 20 }}
+      // modalImgStyle={{height: '95%'}}
+      animationType="fade"
       renderHeader={this.renderHeader}
       renderFooter={this.renderFooter}
       source={this.props.items}
@@ -74,5 +80,6 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    color: '#000'
   },
 });

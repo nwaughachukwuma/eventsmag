@@ -9,7 +9,7 @@ import {
     AsyncStorage
 } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather'
-import {Avatar} from 'react-native-paper'
+import {Avatar, Switch} from 'react-native-paper'
 import { Grid, Row } from 'react-native-easy-grid'
 import LinearGradient from 'react-native-linear-gradient';
 import { withFirebase, isEmpty } from 'react-redux-firebase'
@@ -69,7 +69,7 @@ const styles = StyleSheet.flatten({
         color: '#FFF',
         fontSize: 12,
         fontFamily: 'Roboto-Medium',
-    }
+    },
 });
 
 const sidebar_items = [
@@ -105,6 +105,9 @@ export class Drawer extends Component {
     name = 'Drawer'
     constructor(props) {
         super(props)
+        this.state = {
+            presence: false
+        }
     }
 
     static get options() {
@@ -125,8 +128,14 @@ export class Drawer extends Component {
 
     componentDidUpdate(prevProps) {
         if (this.props !== prevProps) {
-            if ( isEmpty(this.props.userAuth) ) {
+            const {presence, userAuth} = this.props
+            if ( isEmpty(userAuth) ) {
                 goToAuth();
+            }
+            if (presence) {
+                this.setState({ 
+                    presence: presence[userAuth.uid] === 'online'? true: false
+                })
             }
         }
     }
@@ -145,6 +154,8 @@ export class Drawer extends Component {
     render() {
 
         const { userProfile, userAuth } = this.props;
+        const { presence } = this.state;
+        
         return (
             <Grid style={{ display: 'flex', backgroundColor: '#FFF' }}>
                 <Row size={1}>
@@ -170,16 +181,39 @@ export class Drawer extends Component {
                                     flexGrow: 1,
                                 }}
                             >
-                                <Avatar.Icon  
-                                    size={70}
-                                    icon="person"
-                                    // source={icons.user}
-                                    // source={{uri: path/to/user/image}}
+                                <View
                                     style={{
-                                        height: '40%', width: '30%',   
-                                        marginTop: 25,
+                                        flexGrow: 1,
+                                        flexDirection: 'row',
+                                        justifyContent: 'space-between'
                                     }}
-                                />
+                                >
+                                    <Avatar.Icon  
+                                        size={70}
+                                        icon="person"
+                                        // source={icons.user}
+                                        // source={{uri: path/to/user/image}}
+                                        style={{
+                                            height: '70%', width: '30%',   
+                                            marginTop: 25,
+                                        }}
+                                    />       
+                                    <Switch
+                                        value={this.state.presence}
+                                        style={{
+                                            height: 20,
+                                            marginTop: 40,
+                                            marginRight: 10,
+                                            alignself: 'center'
+                                        }}
+                                        color="#f45342"
+                                        onValueChange={ () => { 
+                                            this.setState(prevState => ({ 
+                                                presence: !prevState.presence 
+                                            })
+                                        )}}
+                                    />
+                                </View>                      
                                 <View style={{ marginBottom: 10 }}>
                                     <Text
                                         adjustsFontSizeToFit
@@ -258,7 +292,8 @@ const mapStateToProps = state => {
     const { firebase } = state;
     return {
         userAuth: firebase.auth,
-        userProfile: firebase.profile
+        userProfile: firebase.profile,
+        presence: firebase.data.presence
     }
 }
 const mapDispatchToProps = dispatch => ({

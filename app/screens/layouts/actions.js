@@ -16,16 +16,31 @@ export function homeBarBtnActions(buttonId, componentId) {
             }
           });
           break;
-        // case 'profileBtn':
-        //   Navigation.push(componentId, {
-        //     component: {
-        //       name: 'Drawer',
-        //     }
-        //   });
-        //   break;
+        case 'profileBtn':
+          Navigation.push(componentId, {
+            component: {
+              name: 'Profile',
+            }
+          });
+          break;
         default:
           alert(buttonId);
       }
+}
+
+export function profileBarBtnActions(buttonId, componentId) {
+
+  switch(buttonId) {
+      case 'profileSettingsBtn':
+        Navigation.push(componentId, {
+          component: {
+            name: 'ProfileSettings',
+          }
+        });
+        break;
+      default:
+        alert(buttonId);
+    }
 }
 
 export default homeBarBtnActions;

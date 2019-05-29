@@ -19,7 +19,8 @@ export const icons = {
     users: require('../assets/icons/users.png'),
     fire: require('../assets/icons/fire.png'),
     event: require('../assets/icons/calendar-outline.png'),
-    account_switch: require('../assets/icons/account-switch.png'),
+    account_switch: require('../assets/icons/account-switch.png'),    
+    settings: require('../assets/icons/settings.png'),
     platformIcons: {
         ...Platform.select({
             // these icons are from android/app/.../res folder
@@ -37,6 +38,7 @@ export const icons = {
                 search_light: {uri: 'ic_action_search_light'},
                 video: {uri: 'ic_action_videocam'},
                 video_light: {uri: 'ic_action_videocam_light'},
+                settings: {uri: 'ic_action_settings'},
             },
             // you should add same icons to Xcode asset catalogs to get same result
             // for now, am going to return the icons in ~projectRoot~/app/assets (JS side) folder 
@@ -45,6 +47,8 @@ export const icons = {
                 search_light: require('../assets/icons/search.png'),
                 person_light: require('../assets/icons/user.png'),
                 menu_light: require('../assets/icons/menu.png'),
+                user: require('../assets/icons/user.png'),
+                settings: require('../assets/icons/settings.png'),
             }
         })
     }

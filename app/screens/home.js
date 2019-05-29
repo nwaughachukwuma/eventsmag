@@ -37,6 +37,7 @@ const rkstyles = RkStyleSheet.create(theme => ({
   },
   avatar: {
     marginRight: 16,
+    marginTop: 5
   },
 }));
 

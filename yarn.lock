@@ -855,6 +855,11 @@
     xcode "^2.0.0"
     xmldoc "^0.4.0"
 
+"@react-native-community/netinfo@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-3.2.0.tgz#e50d1446bd3bc00f87ae5628b85b44e1d641b835"
+  integrity sha512-L44zqmXxfAvQMQrySksdQacfwNPu3xpth94Z7ZAWlFmX0m63psIoQAODzcPUfi6VAbwXd34bN9HypiyAAMByZg==
+
 "@segment/loosely-validate-event@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@segment/loosely-validate-event/-/loosely-validate-event-1.1.2.tgz#d77840999e3f7e43e74b3b0d43391c1526f793b8"

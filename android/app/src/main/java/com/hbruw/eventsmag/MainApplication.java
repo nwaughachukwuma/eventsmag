@@ -3,6 +3,7 @@ package com.hbruw.eventsmag;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.reactnativecommunity.netinfo.NetInfoPackage;
 import io.invertase.firebase.RNFirebasePackage;
 import com.reactnative.ivpusic.imagepicker.PickerPackage;
 import com.horcrux.svg.SvgPackage;
@@ -58,6 +59,7 @@ public class MainApplication extends NavigationApplication {
       // No need to add RnnPackage and MainReactPackage
       return Arrays.<ReactPackage>asList(
             //   new MainReactPackage(),
+            new NetInfoPackage(),
             new RNFirebasePackage(),
             new PickerPackage(),
             new SvgPackage(),

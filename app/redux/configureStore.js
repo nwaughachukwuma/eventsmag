@@ -13,7 +13,9 @@ const reactNativeFirebaseConfig = {
 const reduxFirebaseConfig = {
   userProfile: 'users', // save users profiles to 'users' collection
   useFirestoreForProfile: true, // make false if you need to use Firebase RDB
-  // enable to know the list of online users
+  // enable to know the list of online users. this works better when using RDB and not firestore.
+  // Am using firestore as users and events DB, and manually saving to presence path in RDB
+  // I haven't figured out how to make sessions work with this approach. 
   presence: 'presence', // where list of online users is stored in database
   sessions: 'sessions', // where list of user sessions is stored in database (presence must be enabled)
 };

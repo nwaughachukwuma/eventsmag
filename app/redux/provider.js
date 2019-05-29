@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+// import NetInfo from '@react-native-community/netinfo';
 import createStore, { persistor } from './index';
 
 let store;
@@ -38,6 +39,24 @@ class AppStoreProvider extends PureComponent {
   static propTypes = {
     store: PropTypes.object
   }
+
+  // componentDidMount() {
+
+  //   NetInfo.addEventListener('connectionChange', this.netInfolistener);
+  // }
+  // componentWillUnmount() {
+  //   NetInfo.removeEventListener('connectionChange', this.netInfolistener);
+  // }
+
+  // netInfolistener = ({ type, effectiveType }) => {
+  //   let payload = { netInfo: 'true' };
+  //   if (type === 'unknown' || type === 'none') {
+  //     payload = { netInfo: 'false' };
+  //   }
+  //   setTimeout(() => {
+  //     store.dispatch(storeDeviceEntityCreator.storeDeviceEntity(payload));
+  //   }, 2000);
+  // };
 
   render() {
     const { children } = this.props;

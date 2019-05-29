@@ -6,6 +6,8 @@ import { KittenTheme } from './theme';
 import { SocialBarTypes } from 'components/socialBar/types';
 import { scale } from 'utils/scale';
 
+const theme = KittenTheme;
+
 export const bootstrap = () => {
   
   /*
@@ -32,6 +34,39 @@ export const bootstrap = () => {
     text: {
       textAlign: 'center',
     },
+  });
+
+  RkTheme.setType('RkText', 'header1', {
+    fontSize: theme.fonts.sizes.h1,
+    fontFamily: theme.fonts.family.bold,
+  });
+  RkTheme.setType('RkText', 'header2', {
+    fontSize: theme.fonts.sizes.h2,
+    fontFamily: theme.fonts.family.bold,
+  });
+  RkTheme.setType('RkText', 'header3', {
+    fontSize: theme.fonts.sizes.h3,
+    fontFamily: theme.fonts.family.bold,
+  });
+  RkTheme.setType('RkText', 'header4', {
+    fontSize: theme.fonts.sizes.h4,
+    fontFamily: theme.fonts.family.bold,
+  });
+  RkTheme.setType('RkText', 'header5', {
+    fontSize: theme.fonts.sizes.h5,
+    fontFamily: theme.fonts.family.bold,
+  });
+  RkTheme.setType('RkText', 'header6', {
+    fontSize: theme.fonts.sizes.h6,
+    fontFamily: theme.fonts.family.bold,
+  });
+
+  /*
+   RKButton types
+  */
+
+  RkTheme.setType('RkButton', 'contrast', {
+    color: theme.colors.text.base,
   });
 
   /*

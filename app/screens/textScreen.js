@@ -9,13 +9,13 @@ export class TextScreen extends Component {
 
     static get options() {
         return {
-        topBar: {
-            title: {
-              text: 'TextScreen',
-            },
-            visible: true,
-            drawBehind: false
-          }
+            topBar: {
+                title: {
+                    text: 'TextScreen',
+                },
+                visible: true,
+                drawBehind: false
+            }
         };
     }
 
