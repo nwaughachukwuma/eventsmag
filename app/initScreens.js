@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Navigation } from 'react-native-navigation';
 import {useNetInfo} from "@react-native-community/netinfo";
 import TextScreen from 'screens/textScreen';
@@ -12,6 +12,7 @@ import Drawer from 'screens/layouts/drawer'
 import AuthLoading from 'screens/authLoading';
 import Profile from 'screens/profile';
 import Provider from 'app/redux/provider';
+import {Snackbar} from 'react-native-paper'
 
 
 function WrappedComponent(Component) {
@@ -19,13 +20,34 @@ function WrappedComponent(Component) {
       const EnhancedComponent = () => {
         // Todo: wrap netinfo around each component
         const netInfo = useNetInfo();
-        console.log('netInfo ===>>>', netInfo)
+        const [visible, setVisible] = useState(false);
+        // console.log('netInfo ===>>>', netInfo.isConnected)
+        useEffect(() => {
+          if (!netInfo.isConnected) {
+            setVisible(true);
+            console.log('netInfo true ===>>>', netInfo.isConnected, visible)
+          }else {
+            setVisible(false)
+            console.log('netInfo false ===>>>', netInfo.isConnected, visible)
+          }
+        }, [netInfo.isConnected] )
+
         return (
           <Provider>
             <Component
               {...props}
               netInfo={netInfo}
             />
+            <Snackbar
+              visible={visible}
+              onDismiss={() => setVisible(false) }
+              action={{
+                label: 'OK',
+                onPress: () => setVisible(false),
+              }}
+            >
+              You are offline.
+            </Snackbar>
           </Provider>
         );
       }

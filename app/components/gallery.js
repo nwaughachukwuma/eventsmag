@@ -9,7 +9,8 @@ import {
   RkText,
   RkButton,
   RkModalImg,
-  RkGalleryImage
+  RkGalleryImage,
+  RkGallery
 } from 'react-native-ui-kitten';
 import PropTypes from 'prop-types';
 import { Ellipsis } from './ellipsis';
@@ -41,7 +42,7 @@ export class Gallery extends React.Component {
     </View>
   );
 
-  renderFooter = (options) => (
+  renderFooter = () => (
     <SocialBar />
   );
 
