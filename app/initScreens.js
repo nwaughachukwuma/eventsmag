@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Navigation } from 'react-native-navigation';
 import {useNetInfo} from "@react-native-community/netinfo";
+import {Snackbar} from 'react-native-paper';
 import TextScreen from 'screens/textScreen';
 import { SignUp, PasswordRecovery, Login } from 'screens/auth';
 import Home from 'screens/home'
@@ -11,8 +12,8 @@ import Myevents from 'screens/myevents'
 import Drawer from 'screens/layouts/drawer'
 import AuthLoading from 'screens/authLoading';
 import Profile from 'screens/profile';
+import ProfileSettings from 'screens/profileSettings';
 import Provider from 'app/redux/provider';
-import {Snackbar} from 'react-native-paper'
 
 
 function WrappedComponent(Component) {
@@ -20,15 +21,19 @@ function WrappedComponent(Component) {
       const EnhancedComponent = () => {
         // Todo: wrap netinfo around each component
         const netInfo = useNetInfo();
-        const [visible, setVisible] = useState(false);
-        // console.log('netInfo ===>>>', netInfo.isConnected)
+        const [offline, setOffline] = useState(false);
+        const [checker, setChecker] = useState(false);
+        const [online, setOnline] = useState(true);
+
+        console.log('c-state====>>>', netInfo);
         useEffect(() => {
-          if (!netInfo.isConnected) {
-            setVisible(true);
-            console.log('netInfo true ===>>>', netInfo.isConnected, visible)
+          if (!netInfo.isConnected && netInfo.type === 'none') {
+            setOffline(true);            
+            setOnline(false);
+            setChecker(true);
           }else {
-            setVisible(false)
-            console.log('netInfo false ===>>>', netInfo.isConnected, visible)
+            setOffline(false);
+            setOnline(true);
           }
         }, [netInfo.isConnected] )
 
@@ -39,14 +44,25 @@ function WrappedComponent(Component) {
               netInfo={netInfo}
             />
             <Snackbar
-              visible={visible}
-              onDismiss={() => setVisible(false) }
+              visible={offline}
+              onDismiss={() => setOffline(false) }
               action={{
                 label: 'OK',
-                onPress: () => setVisible(false),
+                onPress: () => setOffline(false),
               }}
             >
-              You are offline.
+              You are offline
+            </Snackbar>
+            <Snackbar
+              visible={online && checker}
+              onDismiss={() => setOnline(false) }
+              action={{
+                label: 'OK',
+                onPress: () => setOnline(false),
+              }}
+              style={{ backgroundColor: '#329999'}}
+            >
+              You are online
             </Snackbar>
           </Provider>
         );
@@ -71,6 +87,7 @@ export default function registerScreens() {
     Navigation.registerComponent('Activity', () => WrappedComponent(Activity), () => Activity);
     Navigation.registerComponent('Myevents', () => WrappedComponent(Myevents), () => Myevents);
     Navigation.registerComponent('Profile', () => WrappedComponent(Profile), () => Profile);
+    Navigation.registerComponent('ProfileSettings', () => WrappedComponent(ProfileSettings), () => ProfileSettings);
 
     console.info('All screens have been registered...');
 }

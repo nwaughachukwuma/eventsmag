@@ -12,6 +12,7 @@ import Icon from 'react-native-vector-icons/Feather'
 import {Avatar, Switch} from 'react-native-paper'
 import { Grid, Row } from 'react-native-easy-grid'
 import LinearGradient from 'react-native-linear-gradient';
+import {Navigation} from 'react-native-navigation';
 import { withFirebase, isEmpty } from 'react-redux-firebase'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
@@ -81,12 +82,12 @@ const sidebar_items = [
     {
         key: 'My Activity',
         icon: 'activity',
-        route: 'MyActivity',
+        route: null //'MyActivity',
     },
     {
         key: 'Profile',
         icon: 'user',
-        route: 'UserProfile',
+        route: 'Profile',
     },
     {
         key: 'Friends',
@@ -239,12 +240,15 @@ export class Drawer extends Component {
                         renderItem={({ item }) => (
                             <TouchableOpacity
                                 onPress={() => {
-                                    // if (item.route) {
-                                    //     props.navigation.navigate(item.route)
-                                    // } else {
-                                    //     console.log('am pressed');
-                                    // }
-                                    alert('am pressed')
+                                    if (item.route) {
+                                        Navigation.push(this.props.componentId, {
+                                            component: {
+                                              name: 'Profile',
+                                            }
+                                        });
+                                    } else {
+                                        alert('am pressed')
+                                    }                                    
                                 }}
                                 style={[
                                     styles.sidebarItem,

@@ -70,12 +70,8 @@ export class Profile extends React.Component {
           size={90}
           source={this.state.data.photo}
           // source={{uri: path/to/user/image}}
-          style={{
-              // height: '20%', width: '20%',   
-              marginBottom: 10,
-          }}
-        />  
-        {/* <Avatar /> */}
+          style={{marginBottom: 10}}
+        /> 
         <RkText rkType='header2'>{`${this.state.data.firstName} ${this.state.data.lastName}`}</RkText>
         <Button
           style={styles.button}

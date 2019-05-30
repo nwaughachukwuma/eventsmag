@@ -6,9 +6,10 @@ import {
 import {
   RkText,
   RkTheme,
+  RkSwitch
 } from 'react-native-ui-kitten';
 import PropTypes from 'prop-types';
-import { RkSwitch } from './switch/index';
+// import { RkSwitch } from './switch/index';
 
 export class SocialSetting extends React.Component {
   static propTypes = {
@@ -18,7 +19,7 @@ export class SocialSetting extends React.Component {
     tintColor: PropTypes.string,
   };
   static defaultProps = {
-    selected: true,
+    selected: false,
     tintColor: RkTheme.current.colors.accent,
   };
 
@@ -41,7 +42,12 @@ export class SocialSetting extends React.Component {
           <RkText rkType='awesome large' style={[styles.icon, { color }]}>{this.props.icon}</RkText>
           <RkText rkType='small' style={{ color }}>{this.props.name}</RkText>
         </View>
-        <RkSwitch value={this.state.selected} onValueChange={this.onSwitchValueChanged} />
+        <RkSwitch
+          tintColor={color}
+          onTintColor={color}
+          value={this.state.selected}
+          onValueChange={this.onSwitchValueChanged}
+        />
       </View>
     );
   }

@@ -3,12 +3,14 @@ import {
 } from 'react-native';
 import { RkTheme } from 'react-native-ui-kitten';
 import { KittenTheme } from './theme';
+import { SwitchTypes } from '../components/switch/types';
 import { SocialBarTypes } from 'components/socialBar/types';
-import { scale } from 'utils/scale';
+import { scale, scaleVertical } from 'utils/scale';
 
 const theme = KittenTheme;
 
 export const bootstrap = () => {
+  
   
   /*
    RkText types
@@ -67,6 +69,27 @@ export const bootstrap = () => {
 
   RkTheme.setType('RkButton', 'contrast', {
     color: theme.colors.text.base,
+  });
+
+  /*
+    RKTextInput types
+  */
+  RkTheme.setType('RkTextInput', 'right', {
+    input: {
+      textAlign: 'right',
+      marginTop: {
+        ios: scaleVertical(18),
+        android: scaleVertical(11),
+      },
+    },
+    label: {
+      fontFamily: theme.fonts.family.light,
+    },
+    container: {
+      marginVertical: 4,
+    },
+    backgroundColor: 'transparent',
+    labelFontSize: theme.fonts.sizes.small,
   });
 
   /*
@@ -199,5 +222,6 @@ export const bootstrap = () => {
   /*
    Register components
    */
+  RkTheme.registerComponent('RkSwitch', SwitchTypes);
   RkTheme.registerComponent('SocialBar', SocialBarTypes);
 };
