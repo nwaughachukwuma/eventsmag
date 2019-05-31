@@ -9,7 +9,7 @@ import {
     AsyncStorage
 } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather'
-import {Avatar, Switch} from 'react-native-paper'
+import { Avatar } from 'react-native-paper'
 import { Grid, Row } from 'react-native-easy-grid'
 import LinearGradient from 'react-native-linear-gradient';
 import {Navigation} from 'react-native-navigation';
@@ -80,7 +80,7 @@ const styles = StyleSheet.flatten({
     },
     presence: {
         marginTop: 40,
-        marginRight: 5,
+        marginRight: 15,
         fontSize: 12,
         fontFamily: 'Roboto-Medium',
         color: 'white'
@@ -117,11 +117,12 @@ const sidebar_items = [
 
 export class Drawer extends Component {
 
+    componentName = 'Drawer'
     name = 'Drawer'
     constructor(props) {
         super(props)
         this.state = {
-            presence: false
+            presence: 'Offline'
         }
     }
 
@@ -149,7 +150,7 @@ export class Drawer extends Component {
             }
             if (presence) {
                 this.setState({ 
-                    presence: presence[userAuth.uid] === 'online'? true: false
+                    presence: presence[userAuth.uid]
                 })
             }
         }
@@ -169,6 +170,7 @@ export class Drawer extends Component {
     render() {
         const { userProfile, userAuth, componentId } = this.props;
         const { presence } = this.state;
+        const presenceIndicator = presence === 'online'? '#e59400': 'purple'
         
         return (
             <Grid style={{ display: 'flex', backgroundColor: '#FFF' }}>
@@ -219,21 +221,10 @@ export class Drawer extends Component {
                                         }}
                                     >
                                         <Text
-                                            style={[styles.presence, {color: presence? 'orange': 'purple'}]}
+                                            style={[styles.presence, {color: presenceIndicator }]}
                                         >
-                                            {presence? 'Online': 'Offline'}
+                                            {presence}
                                         </Text>
-                                        <Switch
-                                            value={this.state.presence}
-                                            style={styles.switch}
-                                            disabled
-                                            color="#f45342"
-                                            onValueChange={ () => { 
-                                                this.setState(prevState => ({ 
-                                                    presence: !prevState.presence 
-                                                })
-                                            )}}
-                                        />
                                     </View>
                                 </View>                      
                                 <View style={{ marginBottom: 10 }}>
