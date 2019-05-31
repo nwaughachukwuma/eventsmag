@@ -24,8 +24,7 @@ function WrappedComponent(Component) {
         const [offline, setOffline] = useState(false);
         const [checker, setChecker] = useState(false);
         const [online, setOnline] = useState(true);
-
-        console.log('c-state====>>>', netInfo);
+        
         useEffect(() => {
           if (!netInfo.isConnected && netInfo.type === 'none') {
             setOffline(true);            

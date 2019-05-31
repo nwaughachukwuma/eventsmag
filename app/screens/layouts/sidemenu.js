@@ -11,7 +11,7 @@ export const sideMenu = {
         component: {
           name: 'Drawer',
           passProps: {
-            text: 'This is the left side menue',
+            text: 'This is the left side menu',
           },
           options: {
             bottomTab: {
@@ -22,7 +22,7 @@ export const sideMenu = {
               backgroundColor: 'white',
             }
           },
-        },
+        },        
       },
       {
         component: {

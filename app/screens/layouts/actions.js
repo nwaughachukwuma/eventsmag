@@ -28,7 +28,7 @@ export function homeBarBtnActions(buttonId, componentId) {
       }
 }
 
-export function profileBarBtnActions(buttonId, componentId) {
+export function AppBarBtnActions(buttonId, componentId) {
 
   switch(buttonId) {
       case 'profileSettingsBtn':
@@ -37,6 +37,9 @@ export function profileBarBtnActions(buttonId, componentId) {
             name: 'ProfileSettings',
           }
         });
+        break;
+      case 'backBtn': 
+        Navigation.dismissModal(componentId);
         break;
       default:
         alert(buttonId);

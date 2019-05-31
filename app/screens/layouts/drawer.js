@@ -20,6 +20,7 @@ import firebase from 'react-native-firebase'
 import {icons} from 'utils'
 import { goToAuth } from '../navigator'
 import { USER_KEY } from '../config'
+import {homeBarBtnActions, otherLeftButtons} from '../layouts'
 
 
 const styles = StyleSheet.flatten({
@@ -154,8 +155,9 @@ export class Drawer extends Component {
 
     render() {
 
-        const { userProfile, userAuth } = this.props;
+        const { userProfile, userAuth, componentId } = this.props;
         const { presence } = this.state;
+        console.log('===>>>', componentId);
         
         return (
             <Grid style={{ display: 'flex', backgroundColor: '#FFF' }}>
@@ -241,11 +243,49 @@ export class Drawer extends Component {
                             <TouchableOpacity
                                 onPress={() => {
                                     if (item.route) {
-                                        Navigation.push(this.props.componentId, {
-                                            component: {
-                                              name: 'Profile',
+                                        Navigation.mergeOptions(componentId, {
+                                            sideMenu: {
+                                              left: {
+                                                visible: false
+                                              }                                        
+                                            }
+                                        });                  
+                                        // sideMenuCenter
+                                        // Navigation.push('HomeBottomTabsId', {
+                                        //     stack: {
+                                        //         children: [{
+                                        //             component: {
+                                        //                 name: 'Home',
+                                        //             },
+                                        //             component: {
+                                        //                 name: 'Profile',
+                                        //             }
+                                        //         }]
+                                        //     }                                            
+                                        // });
+                                        
+
+                                        Navigation.showModal({
+                                            stack: {
+                                              children: [{
+                                                component: {
+                                                  name: 'Profile',
+                                                  passProps: {
+                                                    text: 'stack with one child'
+                                                  },
+                                                  options: {
+                                                    topBar: {
+                                                      title: {
+                                                        text: 'Profile'
+                                                      },
+                                                      leftButtons: otherLeftButtons
+                                                    }
+                                                  }
+                                                }
+                                              }]
                                             }
                                         });
+                                        
                                     } else {
                                         alert('am pressed')
                                     }                                    

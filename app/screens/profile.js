@@ -13,7 +13,7 @@ import { Avatar } from 'react-native-paper';
 import { data } from '../data';
 import formatNumber from 'utils/textUtils';
 import {icons} from 'utils'
-import { profileBarBtnActions } from './layouts'
+import { AppBarBtnActions } from './layouts'
 
 export class Profile extends React.Component {
   
@@ -56,7 +56,7 @@ export class Profile extends React.Component {
   }
 
   navigationButtonPressed({ buttonId }) {
-    profileBarBtnActions(buttonId, this.props.componentId);
+    AppBarBtnActions(buttonId, this.props.componentId);
   }
 
   onFollowButtonPressed = () => {
