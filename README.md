@@ -2,10 +2,12 @@
 #### Create and share beautiful moments
 `This codebase is aimed as a starter for any React Native Project with needs for navigation, auth & state management, database & storage, ready built components and themes`
 
-<img src="https://dl.dropbox.com/s/4ovnfdj8r7j86cm/Image%201.png?dl=0" width="300px" /> <img src="https://dl.dropbox.com/s/0cduinlggz0j986/Image%202.png?dl=0" width="300px" />
+<img src="https://dl.dropbox.com/s/a1qfzgmn2ctljvm/Image%203.png?dl=0" width="300px" /> <img src="https://dl.dropbox.com/s/quwbeuz4a3cxbtc/Image%201.png?dl=0" width="300px" /> <img src="https://dl.dropbox.com/s/554j8s1mkywyzur/Image%204.png?dl=0" width="300px" />
+
+
 
 ### Note: 
-1. This project is optimized for Android, IOS and Windows optimized versions are in the works 
+1. This project is optimized for Android. IOS and Windows optimized versions are in the works 
 2. Master branch contains extraneous files and artefacts you do not need, so please use the public-access branch found here: https://github.com/nwaughachukwuma/eventsmag/tree/public-access
 
 ### Installation:
