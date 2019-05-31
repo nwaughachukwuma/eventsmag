@@ -180,6 +180,7 @@ export class Drawer extends Component {
                         >
                             <TouchableOpacity
                                 onPress={() => {}}
+                                activeOpacity={0.8}
                                 style={{
                                     flexGrow: 1,
                                 }}

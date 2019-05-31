@@ -20,11 +20,12 @@ import { withFirebase, firebaseConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { Avatar } from 'react-native-paper';
+import moment from 'moment';
 import {icons, images} from 'utils'
 import {homeBarBtnActions, rightButtons, leftButtons} from './layouts'
 import { SocialBar } from 'components/socialBar';
 import { data } from '../data';
-const moment = require('moment');
+import { Fab } from 'components/button';
 
 const rkstyles = RkStyleSheet.create(theme => ({
   container: {
@@ -160,6 +161,16 @@ export class Home extends Component {
     homeBarBtnActions(buttonId, this.props.componentId);
   }
 
+  addEvent = () => {
+    /* add new event to the app. Possibe actions include the following
+    1. Add an event with image/photo collections: users can view all the images in this collection
+    2. Add an event with videos: users can watch all the video in this collection
+    3. Add create a collection with images and videos: users can view all
+    4. Add a event description: to include brief summary, date and location of the event.
+    */
+    return alert('onpress handler provided');
+  }
+
   extractItemKey = (item) => `${item.id}`;
 
   renderItem = ({ item }) => (
@@ -196,17 +207,7 @@ export class Home extends Component {
           keyExtractor={this.extractItemKey}
           style={rkstyles.container}
         />
-        {/* <Text>Hello from Home screen.</Text>
-        <Button
-          onPress={() => {
-            Navigation.push(this.props.componentId, {
-              component: {
-                name: 'TextScreen',
-              }
-            });
-          }}
-          title="View next screen"
-        /> */}
+        <Fab onPress={this.addEvent}/>
       </View>
     )
   }

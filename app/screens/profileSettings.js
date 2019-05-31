@@ -3,6 +3,7 @@ import {
   ScrollView,
   View,
   StyleSheet,
+  Keyboard
 } from 'react-native';
 import {
   RkText,
@@ -91,7 +92,10 @@ export class ProfileSettings extends React.Component {
   }
 
   render = () => (
-    <RkAvoidKeyboard>
+    <RkAvoidKeyboard
+      onStartShouldSetResponder={() => true}
+      onResponderRelease={() => Keyboard.dismiss()}
+    >
       <ScrollView style={styles.root}>
         <View style={styles.header}>
           <Avatar.Image  
