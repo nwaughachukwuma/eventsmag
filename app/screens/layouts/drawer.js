@@ -72,6 +72,18 @@ const styles = StyleSheet.flatten({
         fontSize: 12,
         fontFamily: 'Roboto-Medium',
     },
+    switch: {
+        height: 20,
+        marginTop: 40,
+        marginRight: 10,
+        alignself: 'center'
+    },
+    presence: {
+        marginTop: 40,
+        marginRight: 5,
+        fontSize: 12,
+        color: 'white'
+    }
 });
 
 const sidebar_items = [
@@ -154,10 +166,8 @@ export class Drawer extends Component {
     }
 
     render() {
-
         const { userProfile, userAuth, componentId } = this.props;
         const { presence } = this.state;
-        console.log('===>>>', componentId);
         
         return (
             <Grid style={{ display: 'flex', backgroundColor: '#FFF' }}>
@@ -202,21 +212,28 @@ export class Drawer extends Component {
                                             marginTop: 25,
                                         }}
                                     />       
-                                    <Switch
-                                        value={this.state.presence}
+                                    <View
                                         style={{
-                                            height: 20,
-                                            marginTop: 40,
-                                            marginRight: 10,
-                                            alignself: 'center'
+                                            flexDirection: 'row'
                                         }}
-                                        color="#f45342"
-                                        onValueChange={ () => { 
-                                            this.setState(prevState => ({ 
-                                                presence: !prevState.presence 
-                                            })
-                                        )}}
-                                    />
+                                    >
+                                        <Text
+                                            style={[styles.presence, {color: presence? 'orange': 'purple'}]}
+                                        >
+                                            {presence? 'Online': 'Offline'}
+                                        </Text>
+                                        <Switch
+                                            value={this.state.presence}
+                                            style={styles.switch}
+                                            disabled
+                                            color="#f45342"
+                                            onValueChange={ () => { 
+                                                this.setState(prevState => ({ 
+                                                    presence: !prevState.presence 
+                                                })
+                                            )}}
+                                        />
+                                    </View>
                                 </View>                      
                                 <View style={{ marginBottom: 10 }}>
                                     <Text
