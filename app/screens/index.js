@@ -1,3 +1,3 @@
 export * from './auth';
 export * from './profile'
-export * from './profileSettings'
+export { default as ProfileSettings } from './profileSettings'

@@ -2,6 +2,7 @@ import React from 'react';
 import {
   ScrollView,
   View,
+  Text,
   StyleSheet,
   Keyboard
 } from 'react-native';
@@ -11,8 +12,13 @@ import {
   RkAvoidKeyboard,
   RkTheme,
   RkStyleSheet,
+  RkSwitch
 } from 'react-native-ui-kitten';
 import { Avatar } from 'react-native-paper';
+import { withFirebase } from 'react-redux-firebase'
+import { compose } from 'redux'
+import { connect } from 'react-redux'
+import firebase from 'react-native-firebase'
 import { data } from '../data';
 import {
   SocialSetting,
@@ -20,6 +26,44 @@ import {
 } from 'components';
 import { FontAwesome } from 'assets/icons';
 import {KittenTheme as theme} from '../config/theme'
+
+RkTheme.setType('RkSwitch', 'clear', {
+  // marginHorizontal: 20,
+  // paddingHorizontal: 10,
+  // borderWidth: 1
+})
+
+
+const styles = RkStyleSheet.create(theme => ({
+  root: {
+    backgroundColor: theme.colors.screen.base,
+  },
+  header: {
+    backgroundColor: theme.colors.screen.neutral,
+    paddingVertical: 25,
+    alignItems: 'center'
+  },
+  section: {
+    marginVertical: 25,
+  },
+  heading: {
+    paddingBottom: 12.5,
+  },
+  row: {
+    flexDirection: 'row',
+    paddingHorizontal: 17.5,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderColor: theme.colors.border.base,
+    alignItems: 'center',
+  },
+  button: {
+    marginHorizontal: 16,
+    marginBottom: 32,
+  },
+  titleText: {
+    color: '#f45342'
+  }
+}));
 
 export class ProfileSettings extends React.Component {
   
@@ -51,8 +95,29 @@ export class ProfileSettings extends React.Component {
       password: this.user.password,
       newPassword: this.user.newPassword,
       confirmPassword: this.user.confirmPassword,
+      selected: false
     };
   }
+
+  componentDidMount() {
+    const {presence, userAuth} = this.props
+    this.setState({
+      selected: presence[userAuth.uid] === 'online'? true: false
+    })
+  }
+
+  componentDidUpdate = (prevProps, _) => {
+    if (this.props !== prevProps) {
+      const {presence, userAuth} = this.props
+      if (presence !== prevProps.presence) {
+        console.log('presence updated');
+        this.setState({
+          selected: presence[userAuth.uid] === 'online'? true: false
+        })
+      }
+    }
+  };
+  
 
 
   onFirstNameInputChanged = (text) => {
@@ -89,6 +154,26 @@ export class ProfileSettings extends React.Component {
 
   onSaveButtonPressed = () => {
     alert('save button pressed')
+  }
+
+  onSwitchValueChanged = (value) => {
+    // use rnfirebase.io rdb goOffline method here
+    const presenceRef = firebase.database().ref(`presence/${this.props.userAuth.uid}`)
+    firebase.database().ref('.info/connected').on('value', async snapshot => {
+      if (!presenceRef ) {
+        await presenceRef.set('offline');
+      }
+      if (snapshot.val()) {
+        if (!value) {
+          presenceRef.set('offline');
+        }else {
+          presenceRef.onDisconnect().set('offline');
+          presenceRef.set('online');
+        }
+      } else {
+        alert('Can\'t edit visibility at this time');
+      }
+    })
   }
 
   render = () => (
@@ -197,6 +282,26 @@ export class ProfileSettings extends React.Component {
             <SocialSetting name='Facebook' icon={FontAwesome.facebook} tintColor={theme.colors.facebook} />
           </View>
         </View>
+
+        <View style={styles.section}>
+          <View style={[styles.row, styles.heading]}>
+            <RkText rkType='primary header6' style={styles.titleText}>EDIT VISIBILITY</RkText>
+          </View>
+          <View style={[styles.row, {justifyContent: 'space-between'}]}>
+            <Text style={{fontFamily: 'Roboto-Medium'}}>
+              You are {this.state.selected? 'Online': 'Offline' }
+            </Text>
+            <RkSwitch
+              rkType='clear'
+              tintColor={this.state.selected? 'green': theme.colors.border.base}
+              onTintColor={'green'}
+              value={this.state.selected}
+              onValueChange={this.onSwitchValueChanged}
+              style={{marginVertical: 15}}
+            />
+          </View>
+        </View>
+
         <Button
           style={styles.button}
           text='SAVE'
@@ -208,35 +313,18 @@ export class ProfileSettings extends React.Component {
   );
 }
 
-const styles = RkStyleSheet.create(theme => ({
-  root: {
-    backgroundColor: theme.colors.screen.base,
-  },
-  header: {
-    backgroundColor: theme.colors.screen.neutral,
-    paddingVertical: 25,
-    alignItems: 'center'
-  },
-  section: {
-    marginVertical: 25,
-  },
-  heading: {
-    paddingBottom: 12.5,
-  },
-  row: {
-    flexDirection: 'row',
-    paddingHorizontal: 17.5,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderColor: theme.colors.border.base,
-    alignItems: 'center',
-  },
-  button: {
-    marginHorizontal: 16,
-    marginBottom: 32,
-  },
-  titleText: {
-    color: '#f45342'
+const mapStateToProps = state => {
+  const { firebase } = state;
+  return {
+      userAuth: firebase.auth,
+      userProfile: firebase.profile,
+      presence: firebase.data.presence
   }
-}));
-
-export default ProfileSettings;
+}
+const mapDispatchToProps = dispatch => ({
+  // add dispatch methods here
+})
+export default compose(
+  withFirebase,
+  connect(mapStateToProps, mapDispatchToProps)
+)(ProfileSettings);

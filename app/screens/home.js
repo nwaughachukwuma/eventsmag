@@ -110,7 +110,7 @@ export class Home extends Component {
   componentDidUpdate(prevProps, _) {
     if (this.props !== prevProps) {
       const { presence, sessions} = this.props
-      console.log('firebase online state ==>>', presence, sessions);
+      // console.log('firebase online state ==>>', presence, sessions);
     }
   }
 

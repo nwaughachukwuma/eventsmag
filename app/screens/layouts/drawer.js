@@ -82,6 +82,7 @@ const styles = StyleSheet.flatten({
         marginTop: 40,
         marginRight: 5,
         fontSize: 12,
+        fontFamily: 'Roboto-Medium',
         color: 'white'
     }
 });
