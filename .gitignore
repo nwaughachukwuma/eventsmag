@@ -43,6 +43,9 @@ buck-out/
 
 android/app/google-services.json
 
+ios/RN059/GoogleService-Info.plist
+ios/eventsapp/GoogleService-Info.plist
+
 # fastlane
 #
 # It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
