@@ -1,0 +1,36 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'EventsMag' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for EventsMag
+
+  # add the Firebase pod for Google Analytics
+  pod 'Firebase/Analytics'
+  # add pods for any other desired Firebase products
+  # https://firebase.google.com/docs/ios/setup#available-pods
+
+  pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+  pod 'Folly', :podspec => "../node_modules/react-native/third-party-podspecs/Folly.podspec"
+
+  target 'EventsMagTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+
+target 'EventsMag-tvOS' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for EventsMag-tvOS
+
+  target 'EventsMag-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
