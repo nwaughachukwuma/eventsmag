@@ -12,6 +12,8 @@ target 'EventsMag' do
   # add pods for any other desired Firebase products
   # https://firebase.google.com/docs/ios/setup#available-pods
 
+  pod 'NYTPhotoViewer',:git => 'https://github.com/NYTimes/NYTPhotoViewer.git', :branch => 'master'
+  pod 'MerryPhotoViewer', path: '../node_modules/@merryjs/photo-viewer'
   pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
   pod 'Folly', :podspec => "../node_modules/react-native/third-party-podspecs/Folly.podspec"
 

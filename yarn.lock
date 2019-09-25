@@ -1067,9 +1067,10 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
-"@merryjs/photo-viewer@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@merryjs/photo-viewer/-/photo-viewer-3.0.0.tgz#c0cbe7d5e23a86fd8a4f658ddf2ad4d40037cb67"
+"@merryjs/photo-viewer@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@merryjs/photo-viewer/-/photo-viewer-3.1.0.tgz#6dc218b5ecf9c065233c19799bd112b8858e4ab0"
+  integrity sha512-JKibQGdLJr9vdLPgw5GW4YqFOktYF+VB1iiQnt6CiIbE6vQYX55AToKL/1ilGm/MGo39hVu4HwcNkcKGvpSMcw==
 
 "@react-native-community/cli@^1.2.1":
   version "1.2.2"
