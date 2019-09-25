@@ -920,7 +920,6 @@
 				2F524A782C803E36F136BBDD /* Pods-EventsMagTests.debug.xcconfig */,
 				A5E2AA9D9AFFE16D6211D932 /* Pods-EventsMagTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -1037,7 +1036,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "RN059" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "EventsMag" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1863,6 +1862,7 @@
 					"$(SRCROOT)..\node_modules@react-native-community\netinfoios",
 				);
 				INFOPLIST_FILE = EventsMag/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1893,6 +1893,7 @@
 					"$(SRCROOT)..\node_modules@react-native-community\netinfoios",
 				);
 				INFOPLIST_FILE = EventsMag/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -2249,7 +2250,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "RN059" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "EventsMag" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
