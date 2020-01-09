@@ -1,0 +1,26 @@
+{
+  "name": "MerryPhotoViewer",
+  "version": "3.1.2",
+  "summary": "A photo viewer for react native",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/merryjs/photo-viewer",
+  "authors": "bang88",
+  "platforms": {
+    "ios": "8.0",
+    "tvos": "9.2"
+  },
+  "source": {
+    "git": "https://github.com/merryjs/photo-viewer.git",
+    "tag": "3.1.2"
+  },
+  "source_files": "ios/*.{h,m}",
+  "requires_arc": true,
+  "dependencies": {
+    "React": [
+
+    ],
+    "NYTPhotoViewer": [
+
+    ]
+  }
+}

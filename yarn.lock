@@ -1067,10 +1067,10 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
-"@merryjs/photo-viewer@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@merryjs/photo-viewer/-/photo-viewer-3.1.0.tgz#6dc218b5ecf9c065233c19799bd112b8858e4ab0"
-  integrity sha512-JKibQGdLJr9vdLPgw5GW4YqFOktYF+VB1iiQnt6CiIbE6vQYX55AToKL/1ilGm/MGo39hVu4HwcNkcKGvpSMcw==
+"@merryjs/photo-viewer@^3.1.2":
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/@merryjs/photo-viewer/-/photo-viewer-3.1.2.tgz#6be0c1d7a3bd13ae9d7ebbac59629a08fb0866a8"
+  integrity sha512-Ilb3KCZwKyvYcjgbNpHG4FY43imnR26H3PLTFPiiW1BzwffUhz6REK4cEhX4lRumuVRQipbPUuD5fFVFaXegsw==
 
 "@react-native-community/cli@^1.2.1":
   version "1.2.2"
@@ -1110,10 +1110,10 @@
     xcode "^2.0.0"
     xmldoc "^0.4.0"
 
-"@react-native-community/netinfo@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-3.2.0.tgz#e50d1446bd3bc00f87ae5628b85b44e1d641b835"
-  integrity sha512-L44zqmXxfAvQMQrySksdQacfwNPu3xpth94Z7ZAWlFmX0m63psIoQAODzcPUfi6VAbwXd34bN9HypiyAAMByZg==
+"@react-native-community/netinfo@^4.3.1":
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-4.7.0.tgz#7482d36836cac69d0a0ae25581f65bc472639930"
+  integrity sha512-a/sDB+AsLEUNmhAUlAaTYeXKyQdFGBUfatqKkX5jluBo2CB3OAuTHfm7rSjcaLB9EmG5iSq3fOTpync2E7EYTA==
 
 "@segment/loosely-validate-event@^1.1.2":
   version "1.1.2"
@@ -2637,6 +2637,11 @@ create-react-context@^0.2.1, create-react-context@^0.2.3:
   dependencies:
     fbjs "^0.8.0"
     gud "^1.0.0"
+
+cross-os@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/cross-os/-/cross-os-1.3.0.tgz#2a5488c4bdd72768a10d3ce81dfee03f9eb05fb2"
+  integrity sha512-9kViqCcAwlPLTeSDPlyC2FdMQ5UVPtGZUnGV8vYDcBA3olJ/hDR7H6IfrNJft2DlKONleHf8CMhD+7Uv2tBnEw==
 
 cross-spawn@^5.0.1, cross-spawn@^5.1.0:
   version "5.1.0"
@@ -5196,6 +5201,11 @@ jest@^24.8.0:
     import-local "^2.0.0"
     jest-cli "^24.9.0"
 
+jetifier@^1.6.3:
+  version "1.6.5"
+  resolved "https://registry.yarnpkg.com/jetifier/-/jetifier-1.6.5.tgz#ea87324a4230bef20a9651178ecab978ee54a8cb"
+  integrity sha512-T7yzBSu9PR+DqjYt+I0KVO1XTb1QhAfHnXV5Nd3xpbXM6Xg4e3vP60Q4qkNU8Fh6PHC2PivPUNN3rY7G2MxcDQ==
+
 joi@^10.0.2:
   version "10.6.0"
   resolved "https://registry.yarnpkg.com/joi/-/joi-10.6.0.tgz#52587f02d52b8b75cdb0c74f0b164a191a0e1fc2"
@@ -6927,10 +6937,10 @@ react-native-linear-gradient@2.4.0:
   dependencies:
     prop-types "^15.5.10"
 
-react-native-navigation@^2.19.0:
-  version "2.19.0"
-  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-2.19.0.tgz#25a4a5890dd670281925154025f45ac51d1f693f"
-  integrity sha512-r81d+MQUtUY1WedtelnrRdz0w7W9HKaY4Jlwg5bda0vN3DvYOmeAchTiIg76dEgRQs1Pwo67XvgWPKT+TxFlag==
+react-native-navigation@^3.6.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-3.7.0.tgz#cc0469d391e0e2bb2496d5a9853e036e7ec8ed11"
+  integrity sha512-MVJi95+P0zuaR+8M3VJzBr85rzebWUqYQpEaFI0yHeN3EsyyRTRYZZj5rUpOFVD3LI0P+b8pR4wI1rYakheMlg==
   dependencies:
     hoist-non-react-statics "3.x.x"
     lodash "4.17.x"

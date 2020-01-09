@@ -1,0 +1,6 @@
+framework module MerryPhotoViewer {
+  umbrella header "MerryPhotoViewer-umbrella.h"
+
+  export *
+  module * { export * }
+}
