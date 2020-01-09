@@ -157,7 +157,7 @@ dependencies {
     implementation project(':react-native-image-crop-picker')
     implementation project(':react-native-svg')
     implementation project(':react-native-linear-gradient')
-    implementation project(':@merryjs/photo-viewer')
+    implementation project(':@merryjs_photo-viewer')
     implementation project(':react-native-vector-icons')
     implementation project(':react-native-video')
     implementation fileTree(dir: "libs", include: ["*.jar"])
