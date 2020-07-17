@@ -11,7 +11,7 @@
     "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
     "@merryjs/photo-viewer": "^3.0.0",
     "@react-native-community/netinfo": "^3.2.0",
-    "lodash": "4.17.11",
+    "lodash": "4.17.19",
     "moment": "2.20.1",
     "prop-types": "15.6.0",
     "react": "16.8.6",
